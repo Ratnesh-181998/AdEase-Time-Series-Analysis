@@ -9,6 +9,11 @@
 
 ---
 
+## 🎬 Demo
+- **Streamlit Profile** - https://share.streamlit.io/user/ratnesh-181998
+- **Project Demo** - https://adease-time-series-analysis-drkta7i8zeotm6ayyasjj8.streamlit.app/
+  
+---
 ## 🚀 Key Features
 
 ### 1. 📊 Data Overview
