@@ -2,6 +2,8 @@
 
 This folder contains an **optimized version** of the AdEase Time Series app specifically for Streamlit Cloud deployment.
 
+## Google Colab : https://colab.research.google.com/github/Rashida-Rangwala/AdEase_Casestudy/blob/main/AdEase_Casestudy.ipynb
+
 ## 🔧 Optimizations Applied
 
 ### Memory Efficiency
