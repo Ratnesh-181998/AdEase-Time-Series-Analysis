@@ -37,5 +37,5 @@ ENV/
 *.log
 app.log
 
-# Data (Optional: Uncomment if you don't want to upload large data files)
-# Ad_ease_data/
+# Large Data Files (>100MB)
+# Ad_ease_data/train_1.csv
