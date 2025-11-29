@@ -626,6 +626,7 @@ if df_raw is not None:
         plt.title("Number of Pages per Language")
         plt.ylabel("Count")
         st.pyplot(fig1)
+        plt.close()
         
         st.divider()
         
@@ -644,6 +645,7 @@ if df_raw is not None:
             ax2.pie(access_counts, labels=access_counts.index, autopct='%1.1f%%', startangle=90)
             plt.title("Access Type Distribution")
             st.pyplot(fig2)
+        plt.close()
             
         with col2:
             st.markdown("""
@@ -656,6 +658,7 @@ if df_raw is not None:
             ax3.pie(origin_counts, labels=origin_counts.index, autopct='%1.1f%%', startangle=90)
             plt.title("Access Origin Distribution")
             st.pyplot(fig3)
+        plt.close()
             
         st.divider()
         
@@ -671,6 +674,7 @@ if df_raw is not None:
         agg_data['English'].plot(ax=ax4, title="English Language Page Views Over Time")
         plt.ylabel("Average Views")
         st.pyplot(fig4)
+        plt.close()
         
         st.markdown("""
         **Decomposition Analysis:**
@@ -683,6 +687,7 @@ if df_raw is not None:
         fig5 = decomp.plot()
         fig5.set_size_inches(15, 10)
         st.pyplot(fig5)
+        plt.close()
         
         st.divider()
         
@@ -741,6 +746,7 @@ if df_raw is not None:
                 plt.xticks(rotation=45)
                 plt.title("Number of Pages per Language")
                 st.pyplot(fig)
+        plt.close()
             
         with col2:
             with st.container():
@@ -751,6 +757,7 @@ if df_raw is not None:
                        colors=sns.color_palette("pastel"), startangle=90)
                 plt.title("Traffic by Access Device")
                 st.pyplot(fig)
+        plt.close()
             
         st.markdown("---")
         
@@ -777,6 +784,7 @@ if df_raw is not None:
                 plt.grid(True, alpha=0.3)
                 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
                 st.pyplot(fig)
+        plt.close()
 
     with tab4:
         st.header("📉 Stationarity Test (Dickey-Fuller)")
@@ -831,6 +839,7 @@ if df_raw is not None:
             plt.title(f"Differenced Series: {lang_to_diff} (d={diff_order})")
             plt.grid(True, alpha=0.3)
             st.pyplot(fig)
+        plt.close()
 
     with tab5:
         st.header("Forecasting Models")
@@ -963,6 +972,7 @@ if df_raw is not None:
                     plt.legend()
                     plt.title(f"{model_type} Forecast for {lang_select}")
                     st.pyplot(fig)
+        plt.close()
                     
                     logger.info(f"{model_type} forecast for {lang_select} completed. MAPE: {mape_val}")
 
@@ -1106,6 +1116,7 @@ Total Days: {len(agg_data)} days
             plt.xlabel("Date")
             plt.ylabel("Number of Null Values")
             st.pyplot(fig)
+        plt.close()
             
             st.info(f"After treatment: {data.isnull().sum().sum()} null values remaining")
         
@@ -1171,6 +1182,7 @@ data["Access_Origin"] = data.Page.str.findall(
             plt.ylabel("Number of Pages")
             plt.xticks(rotation=45)
             st.pyplot(fig)
+        plt.close()
             
             st.success("**Key Insight:** English has the highest number of pages, making it the primary target for ad placement.")
         
@@ -1192,6 +1204,7 @@ data["Access_Origin"] = data.Page.str.findall(
             ax.pie(access_dist, labels=access_dist.index, autopct='%1.1f%%', startangle=90)
             plt.title("Access Type Distribution")
             st.pyplot(fig)
+        plt.close()
         
         with st.expander("🤖 Access Origin Analysis", expanded=False):
             st.markdown("""
@@ -1210,6 +1223,7 @@ data["Access_Origin"] = data.Page.str.findall(
             ax.pie(origin_dist, labels=origin_dist.index, autopct='%1.1f%%', startangle=90, colors=['#66b3ff', '#ff9999'])
             plt.title("Access Origin Distribution")
             st.pyplot(fig)
+        plt.close()
         
         # Section 3: Exploratory Analysis
         st.markdown("---")
@@ -1229,6 +1243,7 @@ data["Access_Origin"] = data.Page.str.findall(
             plt.ylabel("Mean Views")
             plt.xticks(rotation=45)
             st.pyplot(fig)
+        plt.close()
             
             st.dataframe(lang_means.to_frame(name='Average Daily Views'))
         
@@ -1246,6 +1261,7 @@ data["Access_Origin"] = data.Page.str.findall(
             plt.xlabel("Date")
             plt.legend(title="Language", bbox_to_anchor=(1.05, 1))
             st.pyplot(fig)
+        plt.close()
             
             st.markdown("""
             **Observations:**
@@ -1268,6 +1284,7 @@ data["Access_Origin"] = data.Page.str.findall(
             plot_acf(agg_data['English'], lags=56, ax=ax)
             plt.title("Autocorrelation Function (ACF) - English Language")
             st.pyplot(fig)
+        plt.close()
             
             st.markdown("""
             **Key Findings:**
@@ -1297,6 +1314,7 @@ data["Access_Origin"] = data.Page.str.findall(
             plt.ylabel("Views")
             plt.legend()
             st.pyplot(fig)
+        plt.close()
             
             st.success("""
             **Trend Observations:**
@@ -1383,6 +1401,7 @@ Critical Values:
             fig = decomp.plot()
             fig.set_size_inches(15, 10)
             st.pyplot(fig)
+        plt.close()
             
             # Test residuals for stationarity
             residuals = pd.Series(decomp.resid).fillna(0)
@@ -1413,6 +1432,7 @@ Critical Values:
             ax2.set_title("PACF - English Language")
             
             st.pyplot(fig)
+        plt.close()
             
             st.info("""
             **Interpretation:**
@@ -1440,6 +1460,7 @@ Critical Values:
             ax2.set_ylabel("Differenced Values")
             
             st.pyplot(fig)
+        plt.close()
             
             if is_stat_diff:
                 st.success(f"✅ After 1st differencing: STATIONARY (p-value: {p_val_diff:.6f})")
@@ -1747,6 +1768,7 @@ forecast = model.predict(future)
             plt.title("Average Daily Views by Language")
             plt.xlabel("Mean Views")
             st.pyplot(fig)
+        plt.close()
             
             st.markdown("""
             **Performance Ranking:**
@@ -1802,6 +1824,7 @@ forecast = model.predict(future)
             plt.title("Average Views by Day of Week (English)")
             plt.ylabel("Mean Views")
             st.pyplot(fig)
+        plt.close()
         
         with st.expander("📢 Campaign Impact Analysis", expanded=False):
             st.markdown("""
