@@ -177,8 +177,10 @@ AdEase-AI-Forecasting-Engine/
 - 📱 **Phone:** +91-947XXXXX46
 
 ### Project Links
-- 🐛 **Issue Tracker:** [GitHub Issues](https://github.com/Ratnesh-181998/AdEase-AI-Forecasting-Engine/issues)
-
+- 🌐 Live Demo: [Streamlit](https://adease-time-series-analysis-drkta7i8zeotm6ayyasjj8.streamlit.app/)
+- 📖 Documentation: [GitHub Wiki](https://github.com/Ratnesh-181998/AdEase-Time-Series-Analysis/wiki)
+- 🐛 Issue Tracker: [GitHub Issues](https://github.com/Ratnesh-181998/AdEase-Time-Series-Analysis/issues)
+  
 ---
 
 ## 📄 License
